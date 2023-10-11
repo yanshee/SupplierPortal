@@ -1,0 +1,10 @@
+package com.supplierportal.po.repository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import com.supplierportal.po.entity.*;
+
+public interface purchaseOrderRepository extends JpaRepository<purchaseOrderRepository, String>{
+
+	
+}

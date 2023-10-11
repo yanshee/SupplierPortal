@@ -1,0 +1,20 @@
+package com.supplierportal.po.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.supplierportal.po.entity.purchaseOrder;
+import com.supplierportal.po.repository.purchaseOrderRepository;
+
+@Service
+public interface purchaseOrderService {
+	@Autowired
+	private purchaseOrderRepository purchaseOrderRepository ;
+
+	public List<purchaseOrder> findAllProducts{
+		return purchaseOrderRepository.findAll();
+	}
+	
+}

@@ -1,0 +1,65 @@
+package com.supplierportal.po.entity;
+
+import java.sql.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class purchaseOrder {
+	@Id
+	private String poId;
+	private String location;
+	@JsonFormat(pattern="yyyy-MM-dd")
+	private Date creationDate;
+	private String poQty;
+	private String totalItems;
+	public String getPoId() {
+		return poId;
+	}
+	public void setPoId(String poId) {
+		this.poId = poId;
+	}
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
+	public Date getCreationDate() {
+		return creationDate;
+	}
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+	public String getPoQty() {
+		return poQty;
+	}
+	public void setPoQty(String poQty) {
+		this.poQty = poQty;
+	}
+	public String getTotalItems() {
+		return totalItems;
+	}
+	public void setTotalItems(String totalItems) {
+		this.totalItems = totalItems;
+	}
+	public purchaseOrder(String poId, String location, Date creationDate, String poQty, String totalItems) {
+		super();
+		this.poId = poId;
+		this.location = location;
+		this.creationDate = creationDate;
+		this.poQty = poQty;
+		this.totalItems = totalItems;
+	}
+	public purchaseOrder() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	
+
+}
