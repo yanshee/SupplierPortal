@@ -8,6 +8,7 @@ import { Card,CardContent,CardActions,Typography,Button } from '@mui/material';
 
 function UserMgmtMain() {
     let navigate = useNavigate();
+   
   return (
 
     <div class='UserMgmt-container'>
@@ -98,7 +99,7 @@ function UserMgmtMain() {
                 {<FaUserAlt className='tiles-Ricons'/>}
                 <a class='tiles-component-a'>Delete User</a>
             </div>
-            <div class='Supplier-site'>
+            <div class='Supplier-site' onClick={()=>navigate(`/ViewSupplierSite`)}>
                 {<FaBuilding className='tiles-Ricons'/>}
                 <a class='tiles-component-a'>Supplier Site</a>
             </div>

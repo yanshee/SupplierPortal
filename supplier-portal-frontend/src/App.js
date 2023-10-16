@@ -16,7 +16,10 @@ import OrderSummary from './Components/PurchaseOrder/OrderSummary';
 import UserMgmtMain from './Components/UserMgmt/UserMgmtMain';
 import OrderSummaryNew from './Components/PurchaseOrder/OrderSummaryNew';
 import ViewSupplierSite from './Components/UserMgmt/ViewSupplierSite';
-
+import ViewSupplierSite2 from './Components/UserMgmt/ViewSupplierSite2';
+import SiteRemoveCnfrm from './Components/UserMgmt/SiteRemoveCnfrm';
+import SiteAddCnfrm from './Components/UserMgmt/SiteAddCnfrm';
+import SiteUpdateCnfrm from './Components/UserMgmt/SiteUpdateCnfrm';
 
 function App() 
 {
@@ -52,7 +55,10 @@ function App()
         <Route path='/ItemDetails' exact Component={ItemDetails}></Route>
         <Route path='/UserMgmtMain' exact Component={UserMgmtMain}></Route>
         <Route path='/ViewSupplierSite' exact Component={ViewSupplierSite}></Route>
-        
+        <Route path='/ViewSupplierSite2' exact Component={ViewSupplierSite2}></Route>
+        <Route path='/SiteRemoveCnfrm' exact Component={SiteRemoveCnfrm}></Route>
+        <Route path='/SiteAddCnfrm' exact component={SiteAddCnfrm}></Route>
+        <Route path='/SiteUpdateCnfrm' exact Component={SiteUpdateCnfrm}></Route>
       </Routes>
     </BrowserRouter>
   );

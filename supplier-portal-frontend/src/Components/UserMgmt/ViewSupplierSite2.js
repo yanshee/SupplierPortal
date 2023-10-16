@@ -5,15 +5,8 @@ import '../../style/UserMgmtMain.css'
 import '../../style/ViewSupplierSite.css'
 import {FaUserAlt,FaInfoCircle,FaHome, FaPlusCircle,FaSearch} from "react-icons/fa";
 
-function ViewSupplierSite(){
 
-    // function ViewSite(){
-    //     axios({
-    //         method:'post',
-    //         url: "http://localhost:8080/api/auth/signin",
-    //         data:Data,
-    //     })
-    // }
+function ViewSupplierSite2(){
     return (
         <div class='UserMgmt-container'>
         <div class='HomeNav-container'>
@@ -158,10 +151,10 @@ function ViewSupplierSite(){
         </div>
     </div>
     <div class='foot'>
-        <div class='UserMgmt-remove'>
+        <div class='UserMgmt-remove' style={{backgroundColor:"#00338E"}}>
                 <a class='UserMgmt-Add-a'>Remove Site</a>
         </div>
-        <div class='UserMgmt-edit'>
+        <div class='UserMgmt-edit' style={{backgroundColor:"#00338E"}}>
                 <a class='UserMgmt-Add-a'>Edit Site Info</a>
         </div>
     </div>
@@ -169,4 +162,4 @@ function ViewSupplierSite(){
     )
 }
 
-export default ViewSupplierSite
+export default ViewSupplierSite2;
