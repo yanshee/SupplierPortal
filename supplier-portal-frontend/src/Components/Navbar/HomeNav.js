@@ -32,7 +32,7 @@ function HomeNav() {
         <div class='HomeNav-menu'>
             <div class='HomeNav-menu-content'>
                 <li> 
-                    <a href="#" class='HomeNav-menu-content-dropdown-a'>Dashboard</a>
+                    <a href="#" class='HomeNav-menu-content-dropdown-a' onClick={()=>navigate(`/Dashboard`)}>Dashboard </a>
                 </li>
                 <li>
                     <select class='HomeNav-menu-content-dropdown'>

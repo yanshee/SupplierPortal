@@ -1,9 +1,11 @@
 import React from 'react'
 import '../../style/ChangePasswordConf.css'
 import image from '../../images/Login-Logo.png'
+import { useNavigate } from 'react-router-dom';
 
 function ChangePassword() 
 {
+    let navigate = useNavigate();
   return (
         <div class='cp-container'>
             <div class='cp-logo-box'>
@@ -16,7 +18,7 @@ function ChangePassword()
                     </div>
                     <br/><br/><br/>
                     <div>
-                        <button class='cp-btn'>Continue</button>
+                        <button class='cp-btn' onClick={()=>navigate(`/Dashboard`)} >Continue</button>
                     </div>
                 </form>
             </div>

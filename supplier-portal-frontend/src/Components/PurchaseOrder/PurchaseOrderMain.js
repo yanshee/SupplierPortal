@@ -25,12 +25,6 @@ const PurchaseOrderMain=()=>{
         fetchData();
     }, [])
 
-    if (currentData) {
-        console.log(currentData)
-    }
-    else{
-        alert("Something went wrong!!")
-    }
 
     function tdclick(event){
         const pathCompute='/OrderSummary'

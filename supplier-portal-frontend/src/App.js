@@ -20,6 +20,7 @@ import ViewSupplierSite2 from './Components/UserMgmt/ViewSupplierSite2';
 import SiteRemoveCnfrm from './Components/UserMgmt/SiteRemoveCnfrm';
 import SiteAddCnfrm from './Components/UserMgmt/SiteAddCnfrm';
 import SiteUpdateCnfrm from './Components/UserMgmt/SiteUpdateCnfrm';
+import Dashboard from './Components/Navbar/Dashboard';
 
 function App() 
 {
@@ -59,6 +60,7 @@ function App()
         <Route path='/SiteRemoveCnfrm' exact Component={SiteRemoveCnfrm}></Route>
         <Route path='/SiteAddCnfrm' exact component={SiteAddCnfrm}></Route>
         <Route path='/SiteUpdateCnfrm' exact Component={SiteUpdateCnfrm}></Route>
+        <Route path='/Dashboard' exact Component={Dashboard}></Route>
       </Routes>
     </BrowserRouter>
   );
