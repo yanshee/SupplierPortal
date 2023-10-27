@@ -15,22 +15,26 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public class UserDetailsImpl implements UserDetails {
   private static final long serialVersionUID = 1L;
 
-  private Long id;
+  private String supplierId;
 
-  private String username;
+  private String supplierName;
 
   private String email;
+  private String landline;
+  private String mobile;
 
   @JsonIgnore
   private String password;
 
   private Collection<? extends GrantedAuthority> authorities;
 
-  public UserDetailsImpl(Long id, String username, String email, String password,
+  public UserDetailsImpl(String supplierId, String supplierName, String email, String landline, String mobile,String password,
       Collection<? extends GrantedAuthority> authorities) {
-    this.id = id;
-    this.username = username;
+    this.supplierId = supplierId;
+    this.supplierName = supplierName;
     this.email = email;
+    this.landline=landline;
+    this.mobile=mobile;
     this.password = password;
     this.authorities = authorities;
   }
@@ -41,9 +45,11 @@ public class UserDetailsImpl implements UserDetails {
         .collect(Collectors.toList());
 
     return new UserDetailsImpl(
-        user.getId(), 
-        user.getUsername(), 
+        user.getSupplierId(), 
+        user.getSupplierName(), 
         user.getEmail(),
+        user.getLandline(),
+        user.getMobile(),
         user.getPassword(), 
         authorities);
   }
@@ -53,11 +59,13 @@ public class UserDetailsImpl implements UserDetails {
     return authorities;
   }
 
-  public Long getId() {
-    return id;
-  }
+  
+  public String getSupplierId() {
+	return supplierId;
+}
 
-  public String getEmail() {
+
+public String getEmail() {
     return email;
   }
 
@@ -65,11 +73,7 @@ public class UserDetailsImpl implements UserDetails {
   public String getPassword() {
     return password;
   }
-
-  @Override
-  public String getUsername() {
-    return username;
-  }
+ 
 
   @Override
   public boolean isAccountNonExpired() {
@@ -98,11 +102,29 @@ public class UserDetailsImpl implements UserDetails {
     if (o == null || getClass() != o.getClass())
       return false;
     UserDetailsImpl user = (UserDetailsImpl) o;
-    return Objects.equals(id, user.id);
+    return Objects.equals(supplierId, user.supplierId);
   }
 
 public String getToken() {
 	// TODO Auto-generated method stub
 	return null;
 }
+
+@Override
+public String getUsername() {
+	// TODO Auto-generated method stub
+	return supplierName;
+}
+
+public String getLandline() {
+	return landline;
+}
+
+
+
+public String getMobile() {
+	return mobile;
+}
+
+
 }

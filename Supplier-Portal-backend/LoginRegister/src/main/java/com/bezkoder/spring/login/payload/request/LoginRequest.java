@@ -4,24 +4,40 @@ import jakarta.validation.constraints.NotBlank;
 
 public class LoginRequest {
 	@NotBlank
-	private String username;
+	private String supplierName;
 
 	@NotBlank
 	private String password;
 
-	public String getUsername() {
-		return username;
-	}
+	
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+	
+
+//	public String getSupplierId() {
+//		return supplierId;
+//	}
+//
+//	public void setSupplierId(String supplierId) {
+//		this.supplierId = supplierId;
+//	}
+	
+	
 
 	public String getPassword() {
 		return password;
 	}
 
+	public String getSupplierName() {
+		return supplierName;
+	}
+
+	public void setSupplierName(String supplierName) {
+		this.supplierName = supplierName;
+	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	
 }

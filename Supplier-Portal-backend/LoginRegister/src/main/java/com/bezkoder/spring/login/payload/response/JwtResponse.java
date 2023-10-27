@@ -5,16 +5,21 @@ import java.util.List;
 public class JwtResponse {
   private String token;
   private String type = "Bearer";
-  private Long id;
-  private String username;
+  private String supplierId;
+  private String supplierName;
   private String email;
+  private String landline;
+  private String mobile;
   private List<String> roles;
 
-  public JwtResponse(String accessToken, Long id, String username, String email, List<String> roles) {
+  public JwtResponse(String accessToken, String supplierId, String supplierName, String email, String landline,
+		  String mobile,List<String> roles) {
     this.token = accessToken;
-    this.id = id;
-    this.username = username;
+    this.supplierId= supplierId;
+    this.supplierName = supplierName;
     this.email = email;
+    this.landline=landline;
+    this.mobile=mobile;
     this.roles = roles;
   }
 
@@ -34,13 +39,7 @@ public class JwtResponse {
     this.type = tokenType;
   }
 
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
+  
 
   public String getEmail() {
     return email;
@@ -50,15 +49,41 @@ public class JwtResponse {
     this.email = email;
   }
 
-  public String getUsername() {
-    return username;
-  }
+  
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+  public String getSupplierId() {
+	return supplierId;
+}
 
-  public List<String> getRoles() {
+public void setSupplierId(String supplierId) {
+	this.supplierId = supplierId;
+}
+
+public String getSupplierName() {
+	return supplierName;
+}
+
+public void setSupplierName(String supplierName) {
+	this.supplierName = supplierName;
+}
+
+public String getLandline() {
+	return landline;
+}
+
+public void setLandline(String landline) {
+	this.landline = landline;
+}
+
+public String getMobile() {
+	return mobile;
+}
+
+public void setMobile(String mobile) {
+	this.mobile = mobile;
+}
+
+public List<String> getRoles() {
     return roles;
   }
 }

@@ -1,6 +1,7 @@
 package com.bezkoder.spring.login.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -70,6 +71,8 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
     return new BCryptPasswordEncoder();
   }
 
+  
+
 //  @Override
 //  protected void configure(HttpSecurity http) throws Exception {
 //    http.cors().and().csrf().disable()
@@ -90,7 +93,10 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
         .authorizeHttpRequests(auth -> 
           auth.requestMatchers("/api/auth/**").permitAll()
               .requestMatchers("/api/test/**").permitAll()
+              .requestMatchers("/api/otp/**").permitAll()
               .anyRequest().authenticated()
+      
+             
         );
     
     http.authenticationProvider(authenticationProvider());
@@ -99,4 +105,6 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
     
     return http.build();
   }
+  
+ 
 }

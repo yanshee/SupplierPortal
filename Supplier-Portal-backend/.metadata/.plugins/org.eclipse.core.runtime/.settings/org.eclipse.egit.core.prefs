@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=C\:\\Users\\yansheesharma1\\workstream-assignment\\spring-boot-login-example\\.git;C\:\\Users\\yansheesharma1\\Downloads\\spring-boot-login-example\\.git;
-GitRepositoriesView.GitDirectories.relative=spring-boot-login-example\\.git;C\:\\Users\\yansheesharma1\\Downloads\\spring-boot-login-example\\.git;
+GitRepositoriesView.GitDirectories=C\:\\Users\\yansheesharma1\\workstream-assignment\\.git;C\:\\Users\\yansheesharma1\\workstream-assignment\\spring-boot-login-example\\.git;C\:\\Users\\yansheesharma1\\Downloads\\spring-boot-login-example\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;spring-boot-login-example\\.git;C\:\\Users\\yansheesharma1\\Downloads\\spring-boot-login-example\\.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1

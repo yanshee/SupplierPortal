@@ -1,8 +1,8 @@
 package com.bezkoder.spring.login.models;
 
 import java.util.HashSet;
-import java.util.Set;
 
+import java.util.Set;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -11,59 +11,84 @@ import jakarta.validation.constraints.Size;
 @Entity
 @Table(name = "users",
        uniqueConstraints = {
-           @UniqueConstraint(columnNames = "username"),
            @UniqueConstraint(columnNames = "email")
        })
 public class User {
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
-
-  @NotBlank
-  @Size(max = 20)
-  private String username;
-
-  @NotBlank
-  @Size(max = 50)
+  @GeneratedValue(strategy = GenerationType.UUID)
+  private String supplierId;
+  private String supplierName;
   @Email
   private String email;
-
-  @NotBlank
-  @Size(max = 120)
+  private String landline;
+  private String mobile;
   private String password;
 
   @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(name = "user_roles", 
-             joinColumns = @JoinColumn(name = "user_id"),
+             joinColumns = @JoinColumn(name = "supplier_id"),
              inverseJoinColumns = @JoinColumn(name = "role_id"))
   private Set<Role> roles = new HashSet<>();
-
+  
+  
   public User() {
-  }
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-  public User(String username, String email, String password) {
-    this.username = username;
-    this.email = email;
-    this.password = password;
-  }
+	public User(String supplierName, @Email String email, String landline, String mobile, String password) {
+		super();
+		this.supplierName = supplierName;
+		this.email = email;
+		this.landline = landline;
+		this.mobile = mobile;
+		this.password = password;
+	}
+	
+	
 
-  public Long getId() {
-    return id;
-  }
+	
+  public User(String supplierName, @Email String email, String landline, String mobile) {
+		super();
+		this.supplierName = supplierName;
+		this.email = email;
+		this.landline = landline;
+		this.mobile = mobile;
+	}
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+public String getSupplierId() {
+	return supplierId;
+}
 
-  public String getUsername() {
-    return username;
-  }
+public void setSupplierId(String supplierId) {
+	this.supplierId = supplierId;
+}
 
-  public void setUsername(String username) {
-    this.username = username;
-  }
+public String getSupplierName() {
+	return supplierName;
+}
 
-  public String getEmail() {
+public void setSupplierName(String supplierName) {
+	this.supplierName = supplierName;
+}
+
+public String getLandline() {
+	return landline;
+}
+
+public void setLandline(String landline) {
+	this.landline = landline;
+}
+
+public String getMobile() {
+	return mobile;
+}
+
+public void setMobile(String mobile) {
+	this.mobile = mobile;
+}
+
+public String getEmail() {
     return email;
   }
 
@@ -86,4 +111,8 @@ public class User {
   public void setRoles(Set<Role> roles) {
     this.roles = roles;
   }
+
+
+  
+  
 }

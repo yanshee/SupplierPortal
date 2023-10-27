@@ -1,6 +1,7 @@
 package com.supplierportal.po.entity;
 
 import java.io.IOException;
+
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -51,11 +52,6 @@ public class poExcelExporter {
 	 
 	 private void writeDataLines() {
 	        int rowCount = 1;
-	 
-//	        XSSFCellStyle style = workbook.createCellStyle();
-//	        XSSFFont font = workbook.createFont();
-//	        font.setFontHeight(14);
-//	        style.setFont(font);
 	                 
 	        for (purchaseOrder purchase : listPO) {
 	            XSSFRow row = sheet.createRow(rowCount++);
@@ -74,7 +70,6 @@ public class poExcelExporter {
 	            cell=row.createCell(4);
 	            cell.setCellValue(purchase.getTotalItems());
 	            
-	           // int columnCount = 0;
 	             
 	           
 	        }

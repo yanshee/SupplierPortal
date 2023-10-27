@@ -2,12 +2,15 @@ package com.supplierportal.po.service;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.supplierportal.po.dto.purchaseOrderDto;
+import com.supplierportal.po.entity.itemDetails;
 import com.supplierportal.po.entity.purchaseOrder;
+import com.supplierportal.po.repository.itemDetailsRepository;
 import com.supplierportal.po.repository.purchaseOrderRepository;
 
 @Service
@@ -17,11 +20,11 @@ public class purchaseOrderServiceImpl implements purchaseOrderService{
 	private purchaseOrderRepository purchaseOrderRepository;
 	
 	
-	
 	public purchaseOrderServiceImpl(purchaseOrderRepository purchaseOrderRepository) {
 		super();
 		this.purchaseOrderRepository = purchaseOrderRepository;
 	}
+	
 
 	@Override
 	public List<purchaseOrder> listAll() {
@@ -36,22 +39,30 @@ public class purchaseOrderServiceImpl implements purchaseOrderService{
 
 	@Override
 	public purchaseOrderDto createPurchaseOrder(purchaseOrderDto purchaseorderDto) {
-		purchaseOrder purchaseorder=new purchaseOrder(purchaseorderDto.getId(), 
-		purchaseorderDto.getPoId(),
+		purchaseOrder purchaseorder=new purchaseOrder(purchaseorderDto.getPoId(), 
 		purchaseorderDto.getLocation(),
         purchaseorderDto.getCreationDate(),
+		purchaseorderDto.getShipByDate(),
+		purchaseorderDto.getEstimatedDeliveryDate(),
         purchaseorderDto.getPoQty(),
-        purchaseorderDto.getTotalItems());
+        purchaseorderDto.getLeadTime(),
+        purchaseorderDto.getTotalItems(),
+        purchaseorderDto.getTotalCost(),
+        purchaseorderDto.getPercentcost());
 
      purchaseOrder savedpurchaseorder=purchaseOrderRepository.save(purchaseorder);
 
 //convert JPA entity to  DTO
-     purchaseOrderDto savedpurchaseDto=new purchaseOrderDto(savedpurchaseorder.getId(),
-    		 savedpurchaseorder.getPoId(),
+     purchaseOrderDto savedpurchaseDto=new purchaseOrderDto(savedpurchaseorder.getPoId(),
     		 savedpurchaseorder.getLocation(),
     		 savedpurchaseorder.getCreationDate(),
+    		 savedpurchaseorder.getShipByDate(),
+    		 savedpurchaseorder.getEstimatedDeliveryDate(),
     		 savedpurchaseorder.getPoQty(),
-    		 savedpurchaseorder.getTotalItems());
+    		 savedpurchaseorder.getLeadTime(),
+    		 savedpurchaseorder.getTotalItems(),
+    		 savedpurchaseorder.getTotalCost(),
+    		 savedpurchaseorder.getPercentcost());
     
      return savedpurchaseDto;
 
@@ -70,6 +81,8 @@ public class purchaseOrderServiceImpl implements purchaseOrderService{
 		List<purchaseOrder> products = purchaseOrderRepository.filterProducts(query);
         return products;
 	}
+
+	
 
 	
 

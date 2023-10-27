@@ -6,6 +6,11 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\yansheesharma1\workstream-assignment\poasn"/>
+			<item value="C:\Users\yansheesharma1\Downloads\poasn"/>
+			<item value="C:\Users\yansheesharma1\workstream-assignment\supplier-portal-login"/>
+			<item value="C:\Users\yansheesharma1\workstream-assignment\LoginRegister"/>
+			<item value="C:\Users\yansheesharma1\workstream-assignment\spring-boot-login-example"/>
 			<item value="C:\Users\yansheesharma1\Downloads\spring-boot-login-example"/>
 			<item value="C:\Users\yansheesharma1\Downloads\springboot-blog-rest-api"/>
 			<item value="C:\Users\yansheesharma1\Downloads\supplier-portal-rest-apis"/>
