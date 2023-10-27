@@ -21,6 +21,9 @@ import SiteRemoveCnfrm from './Components/UserMgmt/SiteRemoveCnfrm';
 import SiteAddCnfrm from './Components/UserMgmt/SiteAddCnfrm';
 import SiteUpdateCnfrm from './Components/UserMgmt/SiteUpdateCnfrm';
 import Dashboard from './Components/Navbar/Dashboard';
+import UMCreateUser from './Components/UserMgmt/UMCreateUser';
+import UMRemoveUser from './Components/UserMgmt/UMRemoveUser';
+import UMViewUser from './Components/UserMgmt/UMViewUser';
 
 function App() 
 {
@@ -61,6 +64,9 @@ function App()
         <Route path='/SiteAddCnfrm' exact component={SiteAddCnfrm}></Route>
         <Route path='/SiteUpdateCnfrm' exact Component={SiteUpdateCnfrm}></Route>
         <Route path='/Dashboard' exact Component={Dashboard}></Route>
+        <Route path='/UMCreateUser' exact Component={UMCreateUser}></Route>
+        <Route path='/UMRemoveUser' exact Component={UMRemoveUser}></Route>
+        <Route path='/UMViewUser' exact Component={UMViewUser}></Route>
       </Routes>
     </BrowserRouter>
   );
