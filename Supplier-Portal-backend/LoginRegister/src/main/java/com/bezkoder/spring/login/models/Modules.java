@@ -15,9 +15,9 @@ public class Modules {
 	private int moduleId;
 	private String moduleName;
 	
-	@ManyToOne
-    @JoinColumn(name="id_user", nullable=false)
-    private User users;
+//	@ManyToOne
+//    @JoinColumn(name="id_user", nullable=false)
+//    private User users;
 
 	public int getModuleId() {
 		return moduleId;

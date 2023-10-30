@@ -8,8 +8,8 @@ public class UserDto {
 	  private String email;
 	  private String mobile;
 	 
-	  private int userid;
-	  private int iduser;
+	  private int id;
+//	  private int iduser;
 
 	public String getSupplierName() {
 		return supplierName;
@@ -35,30 +35,40 @@ public class UserDto {
 		this.mobile = mobile;
 	}
 
-	public int getUserid() {
-		return userid;
-	}
+//	public int getUserid() {
+//		return userid;
+//	}
+//
+//	public void setUserid(int userid) {
+//		this.userid = userid;
+//	}
+//	
+//
+//	public int getIduser() {
+//		return iduser;
+//	}
+//
+//	public void setIduser(int iduser) {
+//		this.iduser = iduser;
+//	}
 
-	public void setUserid(int userid) {
-		this.userid = userid;
-	}
 	
-
-	public int getIduser() {
-		return iduser;
-	}
-
-	public void setIduser(int iduser) {
-		this.iduser = iduser;
-	}
-
-	public UserDto(String supplierName, @Email String email, String mobile, int userid, int iduser) {
+	public UserDto(String supplierName, @Email String email, String mobile, int id) {
 		super();
 		this.supplierName = supplierName;
 		this.email = email;
 		this.mobile = mobile;
-		this.userid = userid;
-		this.iduser=iduser;
+		this.id=id;
+//		this.userid = userid;
+//		this.iduser=iduser;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public UserDto() {

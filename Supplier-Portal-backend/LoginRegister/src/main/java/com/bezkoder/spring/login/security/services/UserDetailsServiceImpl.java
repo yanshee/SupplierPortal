@@ -59,29 +59,34 @@ public class UserDetailsServiceImpl implements UserDetailsService {
   }
   
   public UserDto createUser(UserDto userDto) {
-	  Set<SupplierSite> siteset=new HashSet<SupplierSite>();
-	  Set<Modules> moduleset=new HashSet<Modules>();
-	  int id1=userDto.getUserid();
-	  SupplierSite site=supplierRepo.getById(id1);
+//	  Set<SupplierSite> siteset=new HashSet<SupplierSite>();
+//	  Set<Modules> moduleset=new HashSet<Modules>();
+//	  int id1=userDto.getUserid();
+//	  SupplierSite site=supplierRepo.getById(id1);
+//	  siteset.add(site);
+//	  
+//	  int id2=userDto.getIduser();
+//	  Modules modules=moduleRepo.getById(id2);
+//	  moduleset.add(modules);
+	 int id=userDto.getId();
+	 Set<SupplierSite> siteset=new HashSet<SupplierSite>();
+	 SupplierSite site=supplierRepo.getById(id);
 	  siteset.add(site);
-	  
-	  int id2=userDto.getIduser();
-	  Modules modules=moduleRepo.getById(id2);
-	  moduleset.add(modules);
-	  
+
 	  
 	  User user=new User(userDto.getSupplierName(),
 			  userDto.getEmail(),
 			  userDto.getMobile(),
-			  siteset,
-			  moduleset);
+			  siteset);
+//			  siteset,
+//			  moduleset);
 		
 	  User  saveduser=userRepository.save(user);
 
 		     UserDto saveduserDto=new UserDto(saveduser.getSupplierName(),
 		    		 saveduser.getEmail(),
 		    		 saveduser.getMobile(),
-		    		 id1,id2);
+		    		 id);
 		   
 		     return saveduserDto;
 		

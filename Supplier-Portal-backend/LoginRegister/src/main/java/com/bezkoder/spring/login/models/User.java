@@ -2,7 +2,13 @@ package com.bezkoder.spring.login.models;
 
 import java.util.HashSet;
 
+
 import java.util.Set;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.annotations.OnDeleteAction;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -29,22 +35,29 @@ public class User {
              joinColumns = @JoinColumn(name = "supplier_id"),
              inverseJoinColumns = @JoinColumn(name = "role_id"))
   private Set<Role> roles = new HashSet<>();
+
   
-  @OneToMany(mappedBy="user")
-  private Set<SupplierSite> site;
+//  @OneToMany(mappedBy="user")
+//  private Set<SupplierSite> site;
+//	
+//  @OneToMany(mappedBy="users")
+//  private Set<Modules> module;
+  
+  @OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "site_id", nullable = false)
+	@OnDelete(action = OnDeleteAction.CASCADE)
+  private  Set<SupplierSite> site;
 	
-  @OneToMany(mappedBy="users")
-  private Set<Modules> module;
- 
-	
-  public User(String supplierName, @Email String email, String mobile, Set<SupplierSite> site, Set<Modules> module ) {
-		super();
-		this.supplierName = supplierName;
-		this.email = email;
-		this.mobile = mobile;
-		this.site = site;
-		this.module=module;
-	}
+  
+	public User(String supplierName, @Email String email, String mobile, Set<SupplierSite> site) {
+	super();
+	this.supplierName = supplierName;
+	this.email = email;
+	this.mobile = mobile;
+	this.site = site;
+}
+
+
 
 	public User(String supplierName, @Email String email, String landline, String mobile, String password) {
 		super();
@@ -112,22 +125,23 @@ public String getEmail() {
   public void setRoles(Set<Role> roles) {
     this.roles = roles;
   }
+  
 
-public Set<SupplierSite> getSite() {
-	return site;
-}
-
-public void setSite(Set<SupplierSite> site) {
-	this.site = site;
-}
-
-public Set<Modules> getModule() {
-	return module;
-}
-
-public void setModule(Set<Modules> module) {
-	this.module = module;
-}
+//public Set<SupplierSite> getSite() {
+//	return site;
+//}
+//
+//public void setSite(Set<SupplierSite> site) {
+//	this.site = site;
+//}
+//
+//public Set<Modules> getModule() {
+//	return module;
+//}
+//
+//public void setModule(Set<Modules> module) {
+//	this.module = module;
+//}
 
 public User() {
 	super();
