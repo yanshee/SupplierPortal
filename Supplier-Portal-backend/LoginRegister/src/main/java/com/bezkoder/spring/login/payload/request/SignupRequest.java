@@ -12,9 +12,7 @@ public class SignupRequest {
     private String mobile;
     //private String password;
     private Set<String> role;
-    
   
-   
  
     public String getSupplierName() {
 		return supplierName;

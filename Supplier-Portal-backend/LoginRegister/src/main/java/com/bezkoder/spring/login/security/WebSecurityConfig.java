@@ -36,7 +36,7 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
   private AuthEntryPointJwt unauthorizedHandler;
 
   @Bean
-  public AuthTokenFilter authenticationJwtTokenFilter() {
+  public AuthTokenFilter authenticationJwtTokenFilter(){
     return new AuthTokenFilter();
   }
 
@@ -94,6 +94,7 @@ public class WebSecurityConfig { // extends WebSecurityConfigurerAdapter {
           auth.requestMatchers("/api/auth/**").permitAll()
               .requestMatchers("/api/test/**").permitAll()
               .requestMatchers("/api/otp/**").permitAll()
+              .requestMatchers("/suppliersite/**").permitAll()
               .anyRequest().authenticated()
       
              

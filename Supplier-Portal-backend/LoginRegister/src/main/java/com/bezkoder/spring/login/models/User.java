@@ -15,8 +15,8 @@ import jakarta.validation.constraints.Size;
        })
 public class User {
   @Id
-  @GeneratedValue(strategy = GenerationType.UUID)
-  private String supplierId;
+  @GeneratedValue(strategy = GenerationType.SEQUENCE)
+  private Integer id;
   private String supplierName;
   @Email
   private String email;
@@ -30,10 +30,20 @@ public class User {
              inverseJoinColumns = @JoinColumn(name = "role_id"))
   private Set<Role> roles = new HashSet<>();
   
-  
-  public User() {
+  @OneToMany(mappedBy="user")
+  private Set<SupplierSite> site;
+	
+  @OneToMany(mappedBy="users")
+  private Set<Modules> module;
+ 
+	
+  public User(String supplierName, @Email String email, String mobile, Set<SupplierSite> site, Set<Modules> module ) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.supplierName = supplierName;
+		this.email = email;
+		this.mobile = mobile;
+		this.site = site;
+		this.module=module;
 	}
 
 	public User(String supplierName, @Email String email, String landline, String mobile, String password) {
@@ -47,22 +57,13 @@ public class User {
 	
 	
 
-	
-  public User(String supplierName, @Email String email, String landline, String mobile) {
-		super();
-		this.supplierName = supplierName;
-		this.email = email;
-		this.landline = landline;
-		this.mobile = mobile;
+public Integer getId() {
+		return id;
 	}
 
-public String getSupplierId() {
-	return supplierId;
-}
-
-public void setSupplierId(String supplierId) {
-	this.supplierId = supplierId;
-}
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 public String getSupplierName() {
 	return supplierName;
@@ -112,7 +113,25 @@ public String getEmail() {
     this.roles = roles;
   }
 
+public Set<SupplierSite> getSite() {
+	return site;
+}
 
-  
-  
+public void setSite(Set<SupplierSite> site) {
+	this.site = site;
+}
+
+public Set<Modules> getModule() {
+	return module;
+}
+
+public void setModule(Set<Modules> module) {
+	this.module = module;
+}
+
+public User() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+ 
 }

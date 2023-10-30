@@ -5,17 +5,17 @@ import java.util.List;
 public class JwtResponse {
   private String token;
   private String type = "Bearer";
-  private String supplierId;
+  private int id;
   private String supplierName;
   private String email;
   private String landline;
   private String mobile;
   private List<String> roles;
 
-  public JwtResponse(String accessToken, String supplierId, String supplierName, String email, String landline,
+  public JwtResponse(String accessToken, int id, String supplierName, String email, String landline,
 		  String mobile,List<String> roles) {
     this.token = accessToken;
-    this.supplierId= supplierId;
+    this.id= id;
     this.supplierName = supplierName;
     this.email = email;
     this.landline=landline;
@@ -51,12 +51,13 @@ public class JwtResponse {
 
   
 
-  public String getSupplierId() {
-	return supplierId;
+ 
+public int getId() {
+	return id;
 }
 
-public void setSupplierId(String supplierId) {
-	this.supplierId = supplierId;
+public void setId(int id) {
+	this.id = id;
 }
 
 public String getSupplierName() {

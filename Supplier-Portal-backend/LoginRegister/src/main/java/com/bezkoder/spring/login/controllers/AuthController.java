@@ -2,6 +2,7 @@ package com.bezkoder.spring.login.controllers;
 
 import java.util.HashSet;
 
+
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -57,15 +58,10 @@ public class AuthController {
 
   @Autowired
   UserRepository userRepository;
-
-//  @Autowired
-//  AdminUserRepository adminuserRepository;
   
   @Autowired
   RoleRepository roleRepository;
 
- @Autowired
- PasswordEncoder encoder;
 
   @Autowired
   JwtUtils jwtUtils;
@@ -75,6 +71,9 @@ public class AuthController {
   
   @Autowired 
   private UserDetailsServiceImpl userService;
+  
+  @Autowired
+  PasswordEncoder encoder;
 
   @PostMapping("/signin")
   public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
@@ -91,7 +90,7 @@ public class AuthController {
         .collect(Collectors.toList());
 
     return ResponseEntity.ok(new JwtResponse(jwt, 
-                         userDetails.getSupplierId(), 
+                         userDetails.getId(), 
                          userDetails.getUsername(), 
                          userDetails.getEmail(), 
                          userDetails.getLandline(),
@@ -201,10 +200,10 @@ public class AuthController {
 //  	return userService.deleteUser(name);
 //  }
 //  
-//  @GetMapping("viewlist")
-//  public ResponseEntity<List<AdminUser>> displayallUsers(){
-//		List<AdminUser> allUser=userService.listAll();
-//		return new ResponseEntity<>(allUser,HttpStatus.CREATED);   
-// }
+ @GetMapping("viewlist")
+ public ResponseEntity<List<User>> displayallUsers(){
+		List<User> allUser=userService.listAll();
+		return new ResponseEntity<>(allUser,HttpStatus.CREATED);   
+ }
   
 }

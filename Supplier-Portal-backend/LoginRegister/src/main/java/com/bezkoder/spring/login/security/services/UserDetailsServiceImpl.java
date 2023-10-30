@@ -4,27 +4,38 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 
 
-
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import com.bezkoder.spring.login.dto.UserDto;
 import com.bezkoder.spring.login.models.User;
+import com.bezkoder.spring.login.repository.ModuleRepository;
+import com.bezkoder.spring.login.repository.SupplierSiteRepository;
 import com.bezkoder.spring.login.repository.UserRepository;
+import com.bezkoder.spring.login.models.SupplierSite;
+import com.bezkoder.spring.login.models.Modules;
+
 import java.util.Base64;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
+import java.util.*;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
   @Autowired
   UserRepository userRepository;
   
-
+  @Autowired
+  SupplierSiteRepository supplierRepo;
   
-  
-
+  @Autowired
+  ModuleRepository moduleRepo;
+ 
   @Override
   @Transactional
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -46,6 +57,35 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		  User updatedUser=userRepository.save(existUser);
 		  return updatedUser; 
   }
+  
+  public UserDto createUser(UserDto userDto) {
+	  Set<SupplierSite> siteset=new HashSet<SupplierSite>();
+	  Set<Modules> moduleset=new HashSet<Modules>();
+	  int id1=userDto.getUserid();
+	  SupplierSite site=supplierRepo.getById(id1);
+	  siteset.add(site);
+	  
+	  int id2=userDto.getIduser();
+	  Modules modules=moduleRepo.getById(id2);
+	  moduleset.add(modules);
+	  
+	  
+	  User user=new User(userDto.getSupplierName(),
+			  userDto.getEmail(),
+			  userDto.getMobile(),
+			  siteset,
+			  moduleset);
+		
+	  User  saveduser=userRepository.save(user);
+
+		     UserDto saveduserDto=new UserDto(saveduser.getSupplierName(),
+		    		 saveduser.getEmail(),
+		    		 saveduser.getMobile(),
+		    		 id1,id2);
+		   
+		     return saveduserDto;
+		
+	}
  
   public List<User> listAll() {
 		return userRepository.findAll();
