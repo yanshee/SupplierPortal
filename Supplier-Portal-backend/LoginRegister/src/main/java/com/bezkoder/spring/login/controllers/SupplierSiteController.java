@@ -50,27 +50,6 @@ public class SupplierSiteController {
 	@Autowired
 	private UserDetailsServiceImpl userService;
 	
-//	@PostMapping("/createnewuser")
-//	  public ResponseEntity<?> registerNewUser(@Valid @RequestBody NewUserRequest newuserRequest) {
-//	    if (userRepository.existsBySupplierName(newuserRequest.getSupplierName())) {
-//	      return ResponseEntity
-//	          .badRequest()
-//	          .body(new MessageResponse("Error: Username is already taken!"));
-//	    }
-//	    
-//	    int siteId = newuserRequest.getId();
-//	    SupplierSite supSite = supplierRepo.getById(siteId);
-//
-//	    // Create new user's account
-//	    User user = new User(newuserRequest.getSupplierName(), 
-//	    		newuserRequest.getEmail(),
-//	    		newuserRequest.getMobile(),
-//	              supSite);
-//
-//	    userRepository.save(user);
-//
-//	    return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
-//	  }
 	
 	@PostMapping("/createAdmUser")
 	public ResponseEntity<UserDto> createAdminUser(@RequestBody UserDto user){

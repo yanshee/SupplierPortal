@@ -52,13 +52,15 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		  User existUser=userRepository.findBySupplierName(username).get();
 		  existUser.setSupplierName(user.getSupplierName());
 		  existUser.setEmail(user.getEmail());
-		  existUser.setLandline(user.getLandline());
 		  existUser.setMobile(user.getMobile());
+		  existUser.setModule(user.getModule());
+		  existUser.setSite(user.getSite());
 		  User updatedUser=userRepository.save(existUser);
 		  return updatedUser; 
   }
   
   public UserDto createUser(UserDto userDto) {
+	
 //	  Set<SupplierSite> siteset=new HashSet<SupplierSite>();
 //	  Set<Modules> moduleset=new HashSet<Modules>();
 //	  int id1=userDto.getUserid();
@@ -68,25 +70,18 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 //	  int id2=userDto.getIduser();
 //	  Modules modules=moduleRepo.getById(id2);
 //	  moduleset.add(modules);
-	 int id=userDto.getId();
-	 Set<SupplierSite> siteset=new HashSet<SupplierSite>();
-	 SupplierSite site=supplierRepo.getById(id);
-	  siteset.add(site);
+	 
 
 	  
 	  User user=new User(userDto.getSupplierName(),
 			  userDto.getEmail(),
-			  userDto.getMobile(),
-			  siteset);
-//			  siteset,
-//			  moduleset);
+			  userDto.getMobile());
 		
 	  User  saveduser=userRepository.save(user);
 
 		     UserDto saveduserDto=new UserDto(saveduser.getSupplierName(),
 		    		 saveduser.getEmail(),
-		    		 saveduser.getMobile(),
-		    		 id);
+		    		 saveduser.getMobile());
 		   
 		     return saveduserDto;
 		

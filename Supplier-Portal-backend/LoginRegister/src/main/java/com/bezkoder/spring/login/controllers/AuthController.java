@@ -188,18 +188,18 @@ public class AuthController {
       	return newPass;
       	}
   
+  @PutMapping("updateUser/{supplierName}")
+  public ResponseEntity<User> updateUserInfo(@RequestBody User user, @PathVariable String supplierName) {
+	  User newUser=userService.EditUser(supplierName,user);
+	  return new ResponseEntity<>(newUser,HttpStatus.OK);	
+  }
   
-//  @PutMapping("updateUser/{supplierName}")
-//  public ResponseEntity<AdminUser> updateUserInfo(@RequestBody AdminUser user, @PathVariable String name) {
-//	  AdminUser newUser=userService.EditUser(name,user);
-//	  return new ResponseEntity<>(newUser,HttpStatus.OK);	
-//  }
-//  
-//  @DeleteMapping("delete/{supplierName}")
-//  public String userDelete(@PathVariable String name) {
-//  	return userService.deleteUser(name);
-//  }
-//  
+  
+  @DeleteMapping("delete/{supplierName}")
+  public String userDelete(@PathVariable String supplierName) {
+  	return userService.deleteUser(supplierName);
+  }
+  
  @GetMapping("viewlist")
  public ResponseEntity<List<User>> displayallUsers(){
 		List<User> allUser=userService.listAll();
