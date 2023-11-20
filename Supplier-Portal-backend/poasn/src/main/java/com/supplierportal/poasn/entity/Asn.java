@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.type.SqlTypes;
 
 import jakarta.persistence.CascadeType;
@@ -28,6 +30,7 @@ public class Asn {
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="po_id",referencedColumnName="poId")
+//	@OnDelete(action = OnDeleteAction.CASCADE)
 	private pOrder pobj;
 
 	public Long getId() {

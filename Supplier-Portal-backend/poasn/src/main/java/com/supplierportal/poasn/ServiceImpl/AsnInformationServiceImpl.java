@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.supplierportal.poasn.Dto.AsnInformationDto;
-import com.supplierportal.poasn.controller.service.AsnInformationService;
 import com.supplierportal.poasn.entity.Asn;
 import com.supplierportal.poasn.entity.AsnInformation;
 import com.supplierportal.poasn.repository.AsnInformationRepository;
 import com.supplierportal.poasn.repository.AsnRepository;
+import com.supplierportal.poasn.service.AsnInformationService;
 
 @Service
 public class AsnInformationServiceImpl implements AsnInformationService {

@@ -26,6 +26,13 @@ public class pOrder {
 	private Date creationDate;
 	private String poQty;
 	private String totalItems;
+	@JsonFormat(pattern="yyyy-MM-dd")
+	private Date shipDate;
+	@JsonFormat(pattern="yyyy-MM-dd")
+	private Date estDeliveryDate;
+	private String supplierSite;
+	private String leadTime;
+	private String totalCost;
 	
 	public Long getPoId() {
 		return poId;
@@ -57,18 +64,52 @@ public class pOrder {
 	public void setTotalItems(String totalItems) {
 		this.totalItems = totalItems;
 	}
+	public Date getShipDate() {
+		return shipDate;
+	}
+	public void setShipDate(Date shipDate) {
+		this.shipDate = shipDate;
+	}
+	public Date getEstDeliveryDate() {
+		return estDeliveryDate;
+	}
+	public void setEstDeliveryDate(Date estDeliveryDate) {
+		this.estDeliveryDate = estDeliveryDate;
+	}
+	public String getSupplierSite() {
+		return supplierSite;
+	}
+	public void setSupplierSite(String supplierSite) {
+		this.supplierSite = supplierSite;
+	}
+	public String getLeadTime() {
+		return leadTime;
+	}
+	public void setLeadTime(String leadTime) {
+		this.leadTime = leadTime;
+	}
+	public String getTotalCost() {
+		return totalCost;
+	}
+	public void setTotalCost(String totalCost) {
+		this.totalCost = totalCost;
+	}
 	
 	
-	
-	public pOrder(Long poId, String location, Date creationDate, String poQty, String totalItems) {
+	public pOrder(Long poId, String location, Date creationDate, String poQty, String totalItems, Date shipDate,
+			Date estDeliveryDate, String supplierSite, String leadTime, String totalCost) {
 		super();
 		this.poId = poId;
 		this.location = location;
 		this.creationDate = creationDate;
 		this.poQty = poQty;
 		this.totalItems = totalItems;
+		this.shipDate = shipDate;
+		this.estDeliveryDate = estDeliveryDate;
+		this.supplierSite = supplierSite;
+		this.leadTime = leadTime;
+		this.totalCost = totalCost;
 	}
-	
 	public pOrder() {
 		super();
 		// TODO Auto-generated constructor stub

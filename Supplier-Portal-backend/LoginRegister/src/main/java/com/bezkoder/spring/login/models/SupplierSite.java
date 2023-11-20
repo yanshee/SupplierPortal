@@ -22,7 +22,7 @@ public class SupplierSite {
 	
 	@ManyToOne
     @JoinColumn(name="user_id", nullable=false)
-    private User user;
+    private UserInfo user;
 
 
 	public int getId() {

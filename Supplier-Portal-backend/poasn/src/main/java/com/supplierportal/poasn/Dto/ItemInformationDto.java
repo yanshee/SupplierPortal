@@ -15,6 +15,10 @@ public class ItemInformationDto {
 	private String specification;
 	private String processorName;
 	private String itemBarcode;
+	private String sku;
+	private String price;
+	private String category;
+	private String status;
 	
 	private long itemid;
 
@@ -58,15 +62,52 @@ public class ItemInformationDto {
 	public void setItemid(long itemid) {
 		this.itemid = itemid;
 	}
+	
+	public String getSku() {
+		return sku;
+	}
+
+	public void setSku(String sku) {
+		this.sku = sku;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 
 	
-	public ItemInformationDto(Integer id, String specification, String processorName, String itemBarcode,
-			long itemid) {
+
+	public ItemInformationDto(Integer id, String specification, String processorName, String itemBarcode, String sku,
+			String price, String category, String status, long itemid) {
 		super();
 		this.id = id;
 		this.specification = specification;
 		this.processorName = processorName;
 		this.itemBarcode = itemBarcode;
+		this.sku = sku;
+		this.price = price;
+		this.category = category;
+		this.status = status;
 		this.itemid = itemid;
 	}
 

@@ -6,6 +6,9 @@ public class poItemDto {
 	private String itemNumber;
 	private String itemName;
 	private Integer orderedQty;
+	private Integer shippedQty;
+	private Integer deliveredQty;
+	private String estdLandingCost;
 	private Long poId;
 	private Integer serialid;
 	
@@ -62,13 +65,40 @@ public class poItemDto {
 	public void setPoId(Long poId) {
 		this.poId = poId;
 	}
+	
+	public Integer getShippedQty() {
+		return shippedQty;
+	}
 
-	public poItemDto(long itemid, String itemNumber, String itemName, Integer orderedQty, Long poId, Integer serialid) {
+	public void setShippedQty(Integer shippedQty) {
+		this.shippedQty = shippedQty;
+	}
+
+	public Integer getDeliveredQty() {
+		return deliveredQty;
+	}
+
+	public void setDeliveredQty(Integer deliveredQty) {
+		this.deliveredQty = deliveredQty;
+	}
+
+	public String getEstdLandingCost() {
+		return estdLandingCost;
+	}
+
+	public void setEstdLandingCost(String estdLandingCost) {
+		this.estdLandingCost = estdLandingCost;
+	}
+
+	public poItemDto(long itemid, String itemNumber, String itemName, Integer orderedQty,Integer shippedQty,Integer deliveredQty,String estdLandingCost, Long poId, Integer serialid) {
 		super();
 		this.itemid = itemid;
 		this.itemNumber = itemNumber;
 		this.itemName = itemName;
 		this.orderedQty = orderedQty;
+		this.shippedQty=shippedQty;
+		this.deliveredQty=deliveredQty;
+		this.estdLandingCost=estdLandingCost;
 		this.poId = poId;
 		this.serialid = serialid;
 	}

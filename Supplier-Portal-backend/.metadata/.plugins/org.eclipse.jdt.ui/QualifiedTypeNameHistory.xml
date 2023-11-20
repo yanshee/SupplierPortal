@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="org.springframework.security.config.annotation.web.builders.HttpSecurity"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.CrossOrigin"/>
-    <fullyQualifiedTypeName name="org.springframework.web.cors.reactive.CorsConfigurationSource"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.FetchType"/>
-    <fullyQualifiedTypeName name="org.hibernate.annotations.OnDelete"/>
-    <fullyQualifiedTypeName name="org.hibernate.annotations.OnDeleteAction"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.ManyToMany"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.JoinTable"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.Column"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.CascadeType"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.ManyToOne"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.JoinColumn"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.GenerationType"/>
-    <fullyQualifiedTypeName name="com.supplierportal.poasn.controller.service.pOrderService"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.Dto.pOrderDto"/>
-    <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.Dto.AsnInformationDto"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.repository.ItemInformationRepository"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.Dto.ItemInformationDto"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.controller.service.ItemInformationService"/>
-    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.repository.pOrderRepository"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.entity.pOrder"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.repository.AsnInformationRepository"/>
@@ -29,7 +13,6 @@
     <fullyQualifiedTypeName name="com.supplierportal.poasn.controller.service.poItemService"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.repository.AsnRepository"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.Dto.AsnDto"/>
-    <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.JdbcTypeCode"/>
     <fullyQualifiedTypeName name="org.hibernate.type.SqlTypes"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.repository.poItemRepository"/>
@@ -43,9 +26,7 @@
     <fullyQualifiedTypeName name="com.supplierportal.poasn.Dto.AsnAlertDto"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.controller.service.AsnAlertService"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.entity.AsnAlert"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="com.supplierportal.poasn.repository.AsnAlertRepository"/>
-    <fullyQualifiedTypeName name="com.bezkoder.spring.login.payload.request.NewUserRequest"/>
     <fullyQualifiedTypeName name="com.bezkoder.spring.login.repository.ModuleRepository"/>
     <fullyQualifiedTypeName name="com.bezkoder.spring.login.models.EModule"/>
     <fullyQualifiedTypeName name="com.bezkoder.spring.login.models.ModuleAccess"/>
@@ -54,10 +35,29 @@
     <fullyQualifiedTypeName name="jakarta.persistence.Entity"/>
     <fullyQualifiedTypeName name="jakarta.persistence.GeneratedValue"/>
     <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
-    <fullyQualifiedTypeName name="jakarta.persistence.OneToMany"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="com.bezkoder.spring.login.models.Modules"/>
     <fullyQualifiedTypeName name="com.bezkoder.spring.login.dto.ModulesDto"/>
     <fullyQualifiedTypeName name="com.bezkoder.spring.login.repository.ModulesRepository"/>
     <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+    <fullyQualifiedTypeName name="com.bezkoder.spring.login.payload.request.NewUserRequest"/>
+    <fullyQualifiedTypeName name="com.bezkoder.spring.login.repository.UserRepository"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.OnDelete"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.OnDeleteAction"/>
+    <fullyQualifiedTypeName name="com.bezkoder.spring.login.models.SupplierSite"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.OneToMany"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.supplierportal.poasn.entity.CustomerOrders"/>
+    <fullyQualifiedTypeName name="com.supplierportal.poasn.repository.CustomerOrderItemsRepository"/>
+    <fullyQualifiedTypeName name="com.supplierportal.poasn.service.CustomerOrderItemsService"/>
+    <fullyQualifiedTypeName name="com.supplierportal.poasn.Dto.CustomerOrderItemsDto"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.SQLDelete"/>
+    <fullyQualifiedTypeName name="org.hibernate.annotations.Where"/>
+    <fullyQualifiedTypeName name="com.supplierportal.poasn.entity.CustomerOrderItems"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Query"/>
+    <fullyQualifiedTypeName name="org.springframework.data.jpa.repository.Modifying"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

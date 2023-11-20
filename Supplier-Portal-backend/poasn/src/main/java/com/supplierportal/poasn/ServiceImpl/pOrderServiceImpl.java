@@ -12,9 +12,9 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.supplierportal.poasn.Dto.pOrderDto;
-import com.supplierportal.poasn.controller.service.pOrderService;
 import com.supplierportal.poasn.entity.pOrder;
 import com.supplierportal.poasn.repository.pOrderRepository;
+import com.supplierportal.poasn.service.pOrderService;
 
 @Service
 public class pOrderServiceImpl implements pOrderService{
@@ -45,7 +45,12 @@ public class pOrderServiceImpl implements pOrderService{
 		purchaseorderDto.getLocation(),
         purchaseorderDto.getCreationDate(),
         purchaseorderDto.getPoQty(),
-        purchaseorderDto.getTotalItems());
+        purchaseorderDto.getTotalItems(),
+        purchaseorderDto.getShipDate(),
+        purchaseorderDto.getEstDeliveryDate(),
+        purchaseorderDto.getSupplierSite(),
+        purchaseorderDto.getLeadTime(),
+        purchaseorderDto.getTotalCost());
 
      pOrder savedpurchaseorder=purchaseOrderRepository.save(purchaseorder);
 
@@ -54,7 +59,12 @@ public class pOrderServiceImpl implements pOrderService{
     		 savedpurchaseorder.getLocation(),
     		 savedpurchaseorder.getCreationDate(),
     		 savedpurchaseorder.getPoQty(),
-    		 savedpurchaseorder.getTotalItems());
+    		 savedpurchaseorder.getTotalItems(),
+    		 savedpurchaseorder.getShipDate(),
+    		 savedpurchaseorder.getEstDeliveryDate(),
+    		 savedpurchaseorder.getSupplierSite(),
+    		 savedpurchaseorder.getLeadTime(),
+    		 savedpurchaseorder.getTotalCost());
     
      return savedpurchaseDto;
 
@@ -65,8 +75,6 @@ public class pOrderServiceImpl implements pOrderService{
 		pOrder product = purchaseOrderRepository.searchBypoId(poId);
         return product;
 	}
-
-	
 
 //	@Override
 //	public List<purchaseOrder> filterProducts(String query) {

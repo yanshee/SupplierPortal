@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.supplierportal.poasn.Dto.poItemDto;
-import com.supplierportal.poasn.controller.service.poItemService;
 import com.supplierportal.poasn.entity.AsnInformation;
 import com.supplierportal.poasn.entity.poItem;
 import com.supplierportal.poasn.entity.pOrder;
 import com.supplierportal.poasn.repository.AsnInformationRepository;
 import com.supplierportal.poasn.repository.pOrderRepository;
 import com.supplierportal.poasn.repository.poItemRepository;
+import com.supplierportal.poasn.service.poItemService;
 
 @Service
 public class poItemServiceImpl implements poItemService{
@@ -39,6 +39,9 @@ public class poItemServiceImpl implements poItemService{
 				poitemdto.getItemNumber(),
 				poitemdto.getItemName(),
 				poitemdto.getOrderedQty(),
+				poitemdto.getShippedQty(),
+				poitemdto.getOrderedQty(),
+				poitemdto.getEstdLandingCost(),
 				po,asninfo);
 
 		     poItem saveditem= poitemrepo.save(item);
@@ -47,6 +50,9 @@ public class poItemServiceImpl implements poItemService{
 		    		 saveditem.getItemNumber(),
 		    		 saveditem.getItemName(),
 		    		 saveditem.getOrderedQty(),
+		    		 saveditem.getShippedQty(),
+		    		 saveditem.getDeliveredQty(),
+		    		 saveditem.getEstdLandingCost(),
 		    		 a,b);
 		    
 		     return savedinfoDto;

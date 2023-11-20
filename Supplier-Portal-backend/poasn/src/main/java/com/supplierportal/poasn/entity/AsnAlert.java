@@ -40,6 +40,10 @@ public class AsnAlert {
 		this.message = message;
 		this.creationDate = creationDate;
 	}
+	public AsnAlert() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 	

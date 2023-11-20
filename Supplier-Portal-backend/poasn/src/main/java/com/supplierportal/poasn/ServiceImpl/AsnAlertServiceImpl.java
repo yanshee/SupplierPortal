@@ -2,15 +2,18 @@ package com.supplierportal.poasn.ServiceImpl;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.supplierportal.poasn.Dto.AsnAlertDto;
 import com.supplierportal.poasn.Dto.AsnDto;
-import com.supplierportal.poasn.controller.service.AsnAlertService;
 import com.supplierportal.poasn.entity.Asn;
 import com.supplierportal.poasn.entity.AsnAlert;
 import com.supplierportal.poasn.repository.AsnAlertRepository;
+import com.supplierportal.poasn.service.AsnAlertService;
 
+@Service
 public class AsnAlertServiceImpl implements AsnAlertService{
 	
 	@Autowired

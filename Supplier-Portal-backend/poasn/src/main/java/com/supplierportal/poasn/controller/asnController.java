@@ -11,14 +11,16 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.supplierportal.poasn.Dto.AsnAlertDto;
 import com.supplierportal.poasn.Dto.AsnDto;
 import com.supplierportal.poasn.Dto.AsnInformationDto;
 import com.supplierportal.poasn.Dto.pOrderDto;
-import com.supplierportal.poasn.controller.service.AsnInformationService;
-import com.supplierportal.poasn.controller.service.AsnService;
 import com.supplierportal.poasn.entity.Asn;
 import com.supplierportal.poasn.entity.AsnInformation;
 import com.supplierportal.poasn.entity.ItemInformation;
+import com.supplierportal.poasn.service.AsnAlertService;
+import com.supplierportal.poasn.service.AsnInformationService;
+import com.supplierportal.poasn.service.AsnService;
 
 @RestController
 @RequestMapping("/asn")
@@ -29,6 +31,9 @@ public class asnController {
 	
 	@Autowired
 	private AsnService asnservice;
+	
+	@Autowired
+	private AsnAlertService asnalertservice;
 	
 	@PostMapping("/createasninfo")
 	public ResponseEntity<AsnInformationDto> createAsnInfo(@RequestBody AsnInformationDto asninfo){
@@ -55,4 +60,13 @@ public class asnController {
 		List<Asn> allasn=asnservice.listAllAsn();
 		return new ResponseEntity<>(allasn,HttpStatus.CREATED);   
    }
+
+	
+//------------------------------------------------------*******------------------------------------------------------
+	
+	@PostMapping("/createasnalert")
+	public ResponseEntity<AsnAlertDto> createAsnAlert(@RequestBody AsnAlertDto asn){
+		AsnAlertDto savedasnalert=asnalertservice.createAsnAlert(asn);
+		return new ResponseEntity<>(savedasnalert,HttpStatus.CREATED);	
+	}
 }

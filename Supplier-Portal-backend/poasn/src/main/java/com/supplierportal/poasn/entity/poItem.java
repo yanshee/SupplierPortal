@@ -1,5 +1,8 @@
 package com.supplierportal.poasn.entity;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,9 +19,14 @@ public class poItem {
 	private String itemNumber;
 	private String itemName;
 	private Integer orderedQty;
+	private Integer shippedQty;
+	private Integer deliveredQty;
+	private String estdLandingCost;
+	
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="po_id",referencedColumnName="poId")
+	@OnDelete(action=OnDeleteAction.CASCADE)
 	private pOrder po;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
@@ -56,6 +64,32 @@ public class poItem {
 	public void setOrderedQty(int orderedQty) {
 		this.orderedQty = orderedQty;
 	}
+	
+	
+	public Integer getShippedQty() {
+		return shippedQty;
+	}
+
+	public void setShippedQty(Integer shippedQty) {
+		this.shippedQty = shippedQty;
+	}
+
+	public Integer getDeliveredQty() {
+		return deliveredQty;
+	}
+
+	public void setDeliveredQty(Integer deliveredQty) {
+		this.deliveredQty = deliveredQty;
+	}
+
+	public String getEstdLandingCost() {
+		return estdLandingCost;
+	}
+
+	public void setEstdLandingCost(String estdLandingCost) {
+		this.estdLandingCost = estdLandingCost;
+	}
+
 	public pOrder getPo() {
 		return po;
 	}
@@ -76,12 +110,15 @@ public class poItem {
 		this.orderedQty = orderedQty;
 	}
 
-	public poItem(long itemid, String itemNumber, String itemName, Integer orderedQty, pOrder po, AsnInformation asninfo) {
+	public poItem(long itemid, String itemNumber, String itemName, Integer orderedQty,Integer shippedQty,Integer deliveredQty, String estdLandingCost, pOrder po, AsnInformation asninfo) {
 		super();
 		this.itemid = itemid;
 		this.itemNumber = itemNumber;
 		this.itemName = itemName;
 		this.orderedQty = orderedQty;
+		this.shippedQty=shippedQty;
+		this.deliveredQty=deliveredQty;
+		this.estdLandingCost=estdLandingCost;
 		this.po = po;
 		this.asninfo = asninfo;
 	}

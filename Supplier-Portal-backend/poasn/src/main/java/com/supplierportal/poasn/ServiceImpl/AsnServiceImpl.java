@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.supplierportal.poasn.Dto.AsnDto;
-import com.supplierportal.poasn.controller.service.AsnService;
 import com.supplierportal.poasn.entity.Asn;
 import com.supplierportal.poasn.entity.pOrder;
 import com.supplierportal.poasn.repository.AsnRepository;
 import com.supplierportal.poasn.repository.pOrderRepository;
+import com.supplierportal.poasn.service.AsnService;
 
 @Service
 public class AsnServiceImpl implements AsnService {

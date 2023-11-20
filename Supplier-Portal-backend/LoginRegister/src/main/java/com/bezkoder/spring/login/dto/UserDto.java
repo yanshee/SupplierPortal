@@ -8,7 +8,7 @@ public class UserDto {
 	  private String email;
 	  private String mobile;
 	 
-//	  private int userid;
+	  private int id;
 //	  private int iduser;
 
 	public String getSupplierName() {
@@ -53,13 +53,22 @@ public class UserDto {
 //	}
 
 	
-	public UserDto(String supplierName, @Email String email, String mobile) {
+	public UserDto(String supplierName, @Email String email, String mobile, int id) {
 		super();
 		this.supplierName = supplierName;
 		this.email = email;
 		this.mobile = mobile;
+		this.id=id;
 //		this.userid = userid;
 //		this.iduser=iduser;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public UserDto() {

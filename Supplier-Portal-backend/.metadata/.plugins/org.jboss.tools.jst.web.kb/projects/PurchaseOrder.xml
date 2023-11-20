@@ -69,10 +69,12 @@
   <path value="C:/Users/yansheesharma1/.m2/repository/ch/qos/logback/logback-classic/1.4.8/logback-classic-1.4.8.jar"/>
   <path value="C:/Users/yansheesharma1/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.0/jakarta.xml.bind-api-4.0.0.jar"/>
   <path value="C:/Users/yansheesharma1/.m2/repository/org/slf4j/jul-to-slf4j/2.0.7/jul-to-slf4j-2.0.7.jar"/>
+  <path value="C:/Users/yansheesharma1/.m2/repository/org/springframework/security/spring-security-web/6.1.0/spring-security-web-6.1.0.jar"/>
   <path value="C:/Users/yansheesharma1/.m2/repository/org/springframework/boot/spring-boot-test/3.1.2/spring-boot-test-3.1.2.jar"/>
   <path value="C:/Users/yansheesharma1/.m2/repository/org/apache/poi/poi-ooxml-schemas/4.1.0/poi-ooxml-schemas-4.1.0.jar"/>
   <path value="C:/Users/yansheesharma1/.m2/repository/org/aspectj/aspectjweaver/1.9.19/aspectjweaver-1.9.19.jar"/>
   <path value="C:/Users/yansheesharma1/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar"/>
+  <path value="C:/Users/yansheesharma1/.m2/repository/org/springframework/security/spring-security-config/6.1.0/spring-security-config-6.1.0.jar"/>
   <path value="C:/Users/yansheesharma1/.m2/repository/org/mockito/mockito-junit-jupiter/5.3.1/mockito-junit-jupiter-5.3.1.jar"/>
   <path value="C:/Users/yansheesharma1/.m2/repository/org/apache/poi/poi/4.1.0/poi-4.1.0.jar"/>
   <path value="C:/Users/yansheesharma1/.m2/repository/org/opentest4j/opentest4j/1.2.0/opentest4j-1.2.0.jar"/>

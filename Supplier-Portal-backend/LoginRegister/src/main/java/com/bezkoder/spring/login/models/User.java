@@ -37,23 +37,24 @@ public class User {
   private Set<Role> roles = new HashSet<>();
 
   
-  @OneToMany(mappedBy="user")
-  private Set<SupplierSite> site;
-	
-  @OneToMany(mappedBy="users")
-  private Set<Modules> module;
+//  @OneToMany(mappedBy="user")
+//  private Set<SupplierSite> site;
+//	
+//  @OneToMany(mappedBy="users")
+//  private Set<Modules> module;
   
- 
+  @OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "site_id", nullable = false)
+	@OnDelete(action = OnDeleteAction.CASCADE)
+  private  Set<SupplierSite> site;
 	
-
-
-	public User(String supplierName, @Email String email, String mobile) {
+  
+	public User(String supplierName, @Email String email, String mobile, Set<SupplierSite> site) {
 	super();
 	this.supplierName = supplierName;
 	this.email = email;
 	this.mobile = mobile;
-//	this.site = site;
-//	this.module = module;
+	this.site = site;
 }
 
 
@@ -126,21 +127,21 @@ public String getEmail() {
   }
   
 
-public Set<SupplierSite> getSite() {
-	return site;
-}
-
-public void setSite(Set<SupplierSite> site) {
-	this.site = site;
-}
-
-public Set<Modules> getModule() {
-	return module;
-}
-
-public void setModule(Set<Modules> module) {
-	this.module = module;
-}
+//public Set<SupplierSite> getSite() {
+//	return site;
+//}
+//
+//public void setSite(Set<SupplierSite> site) {
+//	this.site = site;
+//}
+//
+//public Set<Modules> getModule() {
+//	return module;
+//}
+//
+//public void setModule(Set<Modules> module) {
+//	this.module = module;
+//}
 
 public User() {
 	super();
